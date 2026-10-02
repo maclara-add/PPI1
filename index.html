@@ -83,6 +83,45 @@
 
         </form>
 
+        <canvas id="canvas" height="1000px" width="600px">
+        
+            <script>
+                // declarar variavel em js
+                const ctx= canvas.getContext("2d");
+                ctx.lineWidth=5;
+
+                desenhando = false;
+
+                ctx.beginPath();
+                ctx.lineTo(150, 1000);
+                ctx.strokeRect(75, 140, 150, 110);
+                ctx.lineTo(150, 60);
+                ctx.closePath();
+
+                canvas.addEventListener("mousedown", (e)=>{
+                    console.log(e);
+                    desenhando = true;
+                })
+
+                canvas.addEventListener("mouseup", (e)=>{
+                    console.log(e);
+                    desenhando = false;
+                })
+
+                canvas.addEventListener("mousemove", (e)=>{
+                    console.log(e);
+                    if(desenhando){
+                    ctx.moveTo(e.offsetX, e.offsetY);
+                    ctx.lineTo(e.offsetX+10, e.offsetY+10);
+                    ctx.stroke();   
+                    }
+
+                })
+
+            </script>
+
+        </canvas>
+
     </ul>
 </body>
 </html>
