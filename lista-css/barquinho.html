@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 10 - Barquinho</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .cena {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #ffffff, #b5e3f5);
+        }
+
+        /* nuvem feita com border-radius e box-shadow */
+        .nuvem {
+            position: absolute;
+            top: 60px;
+            left: -200px;
+            width: 90px;
+            height: 35px;
+            border-radius: 30px;
+            background-color: white;
+            box-shadow: 30px -15px 0 5px white, 60px -5px 0 0 white;
+            animation: passar 40s linear infinite;
+            z-index: 1;
+        }
+
+        /* mar */
+        .mar {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 30%;
+            background-color: #4a5fff;
+            z-index: 2;
+        }
+        .mar::before {
+            content: "";
+            position: absolute;
+            top: -14px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: radial-gradient(circle at 15px 15px, #4a5fff 14px, transparent 15px);
+            background-size: 30px 15px;
+            animation: ondas 4s linear infinite;
+        }
+        .mar::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 25px 0, rgba(255, 255, 255, 0.25) 12px, transparent 13px);
+            background-size: 50px 40px;
+            animation: ondas 6s linear infinite reverse;
+        }
+
+        /* barco: imagem de fundo (svg embutido) */
+        .barco {
+            position: absolute;
+            bottom: calc(30% - 25px);
+            left: -120px;
+            width: 100px;
+            height: 100px;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 10 L50 65 L85 65 Z' fill='dodgerblue' stroke='black' stroke-width='5'/><path d='M15 70 H90 L80 90 H25 Z' fill='white' stroke='black' stroke-width='5'/></svg>");
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: navegar 20s linear infinite, balanco 2s ease-in-out infinite;
+            z-index: 3;
+        }
+
+        @keyframes passar {
+            from { left: -200px; }
+            to { left: 100%; }
+        }
+        @keyframes navegar {
+            from { left: -120px; }
+            to { left: 100%; }
+        }
+        @keyframes balanco {
+            0% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+            100% { transform: rotate(-5deg); }
+        }
+        @keyframes ondas {
+            from { background-position-x: 0; }
+            to { background-position-x: 100px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cena">
+        <div class="nuvem"></div>
+        <div class="barco"></div>
+        <div class="mar"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo HTTP na Prática</title>
+</head>
+<body>
+    <div>
+        <h3>Menu de navegação</h3>
+        <li><a href="index.html">Voltar ao inicio</a></li>
+        <li><a href="historia.html">História da web</a></li>
+        <li><a href="curriculo.html">Currículo</a></li>
+        <li><a href="contato.html">Contato</a></li>
+    </div>
+
+    <h1>O Protocolo HTTP na Prática</h1>
+    <hr>
+
+    <h2>Comunicação entre Navegador e Servidor</h2>
+    <p>O HTTP (Hypertext Transfer Protocol) é o protocolo responsável por permitir a comunicação de dados na World Wide Web. O navegador atua como o <strong>cliente</strong> que inicia solicitações, e o sistema remoto atua como o <strong>servidor</strong> que processa o pedido e retorna os dados necessários.</p>
+
+    <h2>Conceitos: Cliente, Servidor, Requisição e Resposta</h2>
+    <ul>
+        <li><strong>Cliente:</strong> O software (geralmente um navegador) que faz a solicitação de um recurso.</li>
+        <li><strong>Servidor:</strong> O computador/sistema central que armazena os arquivos da aplicação e responde às solicitações.</li>
+        <li><strong>Requisição (Request):</strong> A mensagem enviada pelo cliente pedindo um recurso específico.</li>
+        <li><strong>Resposta (Response):</strong> A resposta retornada pelo servidor contendo os dados solicitados ou informações sobre o status do processamento.</li>
+    </ul>
+
+    <h2>Métodos HTTP: GET e POST</h2>
+    <p><strong>GET:</strong> Utilizado para solicitar e buscar dados de um recurso específico sem alterar o estado do servidor. Os parâmetros são transmitidos na própria URL.</p>
+    <p><strong>POST:</strong> Utilizado para enviar dados ao servidor para criar ou atualizar um recurso (ex: envio de formulários). Os dados são transmitidos no corpo da requisição.</p>
+
+    <h2>Exemplo de Requisição HTTP</h2>
+    <pre>
+GET /index.html HTTP/1.1
+Host: www.exemplo.com.br
+User-Agent: Mozilla/5.0
+Accept: text/html
+    </pre>
+
+    <h2>Exemplo de Resposta HTTP</h2>
+    <pre>
+HTTP/1.1 200 OK
+Date: Wed, 20 Mar 2026 12:00:00 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 1256
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;...&lt;/html&gt;
+    </pre>
+
+    <h2>Códigos de Status HTTP</h2>
+    <ul>
+        <li><strong>200 OK:</strong> A requisição foi bem-sucedida e o recurso foi retornado.</li>
+        <li><strong>301 Moved Permanently:</strong> O recurso solicitado foi movido permanentemente para uma nova URL.</li>
+        <li><strong>400 Bad Request:</strong> A requisição possui sintaxe inválida ou não pôde ser processada pelo servidor.</li>
+        <li><strong>403 Forbidden:</strong> O cliente não possui permissão de acesso ao recurso solicitado.</li>
+        <li><strong>404 Not Found:</strong> O servidor não encontrou o recurso associado à URL informada.</li>
+        <li><strong>500 Internal Server Error:</strong> O servidor encontrou um erro interno genérico ao tentar processar a solicitação.</li>
+    </ul>
+</body>
+</html>

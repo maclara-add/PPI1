@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6b - Display flex</title>
+    <style>
+        /*
+        Com display: flex no container, os filhos deixam de ficar
+        empilhados e passam a ficar lado a lado na mesma linha.
+        Cada div recebe 25% da largura, por isso as quatro cabem.
+        */
+        body {
+            margin: 0;
+        }
+        .caixa {
+            display: flex;
+        }
+        .caixa div {
+            width: 25%;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+        }
+        #b1 { background-color: rgb(43, 49, 226); }
+        #b2 { background-color: green; }
+        #b3 { background-color: red; }
+        #b4 { background-color: yellow; }
+    </style>
+</head>
+<body>
+    <div class="caixa">
+        <div id="b1">1</div>
+        <div id="b2">2</div>
+        <div id="b3">3</div>
+        <div id="b4">4</div>
+    </div>
+</body>
+</html>

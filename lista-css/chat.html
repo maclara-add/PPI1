@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 7 - Chat</title>
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+        }
+        .chat {
+            width: 360px;
+            margin: 40px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .msg {
+            position: relative;
+            margin-top: 18px;
+            padding: 12px 10px 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        /* limpa os floats para a caixa envolver o conteúdo */
+        .msg::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .nome {
+            position: absolute;
+            top: -9px;
+            left: 6px;
+            padding: 0 3px;
+            background-color: white;
+            font-size: 11px;
+            color: #999;
+        }
+        .avatar {
+            float: left;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            background-color: #cde;
+            text-align: center;
+            line-height: 30px;
+        }
+        .texto {
+            margin: 0;
+        }
+        .hora {
+            clear: both;
+            display: block;
+            text-align: right;
+            font-size: 11px;
+            color: #aaa;
+        }
+        .eu {
+            background-color: #d4f7d4;
+            border-color: #aadfaa;
+            text-align: right;
+        }
+        .eu .avatar {
+            float: right;
+            margin-right: 0;
+            margin-left: 10px;
+            background-color: #bfe8c8;
+        }
+        .envio {
+            margin-top: 18px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .envio::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .envio textarea {
+            width: 100%;
+            height: 60px;
+            box-sizing: border-box;
+        }
+        .envio button {
+            float: right;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat">
+        <div class="msg">
+            <span class="nome">Pessoinha</span>
+            <div class="avatar"></div>
+            <p class="texto">Oii, e essa prova aí</p>
+            <span class="hora">00:50</span>
+        </div>
+
+        <div class="msg eu">
+            <span class="nome">Diva</span>
+            <div class="avatar"></div>
+            <p class="texto">Nem me fale, tô morrendo de medo rs</p>
+            <span class="hora">00:55</span>
+        </div>
+
+        <div class="msg">
+            <span class="nome">Pessoinha</span>
+            <div class="avatar"></div>
+            <p class="texto">Socorro Deus</p>
+            <span class="hora">01:01</span>
+        </div>
+
+        <div class="msg eu">
+            <span class="nome">Eu</span>
+            <div class="avatar"></div>
+            <p class="texto">aaaaaaaaaaa</p>
+            <span class="hora">00:55</span>
+        </div>
+
+        <div class="envio">
+            <textarea placeholder="Digite sua mensagem"></textarea>
+            <button>Enviar</button>
+        </div>
+    </div>
+</body>
+</html>

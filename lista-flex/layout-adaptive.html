@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4 - Layout adaptativo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .pagina {
+            display: grid;
+            grid-template-columns: 120px 1fr 120px;
+            grid-template-rows: 50px 40px 1fr 40px 40px;
+            grid-template-areas:
+                "cabecalho cabecalho cabecalho"
+                "esquerda banner direita"
+                "esquerda principal direita"
+                "esquerda inferior direita"
+                "rodape rodape rodape";
+            gap: 4px;
+            height: 100vh;
+            padding: 4px;
+        }
+        .pagina div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #222;
+        }
+        #cabecalho { grid-area: cabecalho; background-color: #e8b000; }
+        #banner    { grid-area: banner;    background-color: #d94032; }
+        #esquerda  { grid-area: esquerda;  background-color: #0f9d58; }
+        #principal { grid-area: principal; background-color: #4285f4; }
+        #direita   { grid-area: direita;   background-color: #e8b000; }
+        #inferior  { grid-area: inferior;  background-color: #0f9d58; }
+        #rodape    { grid-area: rodape;    background-color: #4285f4; }
+
+        /* telas menores: tudo em uma coluna só */
+        @media screen and (max-width: 600px) {
+            .pagina {
+                grid-template-columns: 1fr;
+                grid-template-rows: 50px 50px 50px 1fr 50px 50px 50px;
+                grid-template-areas:
+                    "cabecalho"
+                    "banner"
+                    "esquerda"
+                    "principal"
+                    "direita"
+                    "inferior"
+                    "rodape";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pagina">
+        <div id="cabecalho">Header</div>
+        <div id="banner">Banner</div>
+        <div id="esquerda">Left Aside</div>
+        <div id="principal">Main Content</div>
+        <div id="direita">Right Aside</div>
+        <div id="inferior">Low Content</div>
+        <div id="rodape">Footer</div>
+    </div>
+</body>
+</html>

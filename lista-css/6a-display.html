@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6a - Display block</title>
+    <style>
+        /*
+        Os elementos div são block por padrão: ocupam a linha inteira
+        e um fica embaixo do outro. A largura de 60% do .caixa e o
+        margin auto deixam o conjunto centralizado na página.
+        */
+        body {
+            margin: 0;
+        }
+        .caixa {
+            width: 60%;
+            margin: 0 auto;
+        }
+        .caixa div {
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+        }
+        #b1 { background-color: rgb(55, 43, 226); }
+        #b2 { background-color: green; }
+        #b3 { background-color: red; }
+        #b4 { background-color: yellow; }
+    </style>
+</head>
+<body>
+    <div class="caixa">
+        <div id="b1">1</div>
+        <div id="b2">2</div>
+        <div id="b3">3</div>
+        <div id="b4">4</div>
+    </div>
+</body>
+</html>

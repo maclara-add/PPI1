@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8 - Bandeiras com CSS</title>
+    <style>
+        .bandeira {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 10px 0 30px 0;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        /* Japão */
+        #japao.bandeira {
+            background-color: white;
+        }
+        #japao.bandeira>div.circulo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            margin: -50px 0 0 -50px;
+            border-radius: 50%;
+            background-color: #bc002d;
+        }
+
+        /* Alemanha */
+        #alemanha.bandeira>div.faixa {
+            height: 33.33%;
+        }
+        #alemanha.bandeira>div.faixa:nth-child(1) { background-color: black; }
+        #alemanha.bandeira>div.faixa:nth-child(2) { background-color: #dd0000; }
+        #alemanha.bandeira>div.faixa:nth-child(3) { background-color: #ffce00; }
+
+        /* Holanda */
+        #holanda.bandeira>div.faixa {
+            height: 33.33%;
+        }
+        #holanda.bandeira>div.faixa:nth-child(1) { background-color: #ae1c28; }
+        #holanda.bandeira>div.faixa:nth-child(2) { background-color: white; }
+        #holanda.bandeira>div.faixa:nth-child(3) { background-color: #21468b; }
+
+        /* Itália */
+        #italia.bandeira {
+            display: flex;
+        }
+        #italia.bandeira>div.faixa {
+            width: 33.33%;
+            height: 100%;
+        }
+        #italia.bandeira>div.faixa:nth-child(1) { background-color: #009246; }
+        #italia.bandeira>div.faixa:nth-child(2) { background-color: white; }
+        #italia.bandeira>div.faixa:nth-child(3) { background-color: #ce2b37; }
+
+        /* Brasil */
+        #brasil.bandeira {
+            background-color: #009c3b;
+        }
+        #brasil.bandeira>div.losango {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 130px;
+            height: 130px;
+            margin: -65px 0 0 -65px;
+            background-color: #ffdf00;
+            transform: rotate(45deg);
+        }
+        #brasil.bandeira>div.circulo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 90px;
+            height: 90px;
+            margin: -45px 0 0 -45px;
+            border-radius: 50%;
+            background-color: #002776;
+            overflow: hidden;
+        }
+        #brasil.bandeira>div.circulo>div.faixa-branca {
+            position: absolute;
+            top: 40px;
+            width: 100%;
+            height: 10px;
+            background-color: white;
+            transform: rotate(-12deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>Bandeiras</h1>
+
+    <a href="#japao">Bandeira Japão</a> |
+    <a href="#alemanha">Bandeira Alemanha</a> |
+    <a href="#holanda">Bandeira Holanda</a> |
+    <a href="#italia">Bandeira Itália</a> |
+    <a href="#brasil">Bandeira Brasil</a>
+
+    <h2>Japão</h2>
+    <div class="bandeira" id="japao">
+        <div class="circulo"></div>
+    </div>
+
+    <h2>Alemanha</h2>
+    <div class="bandeira" id="alemanha">
+        <div class="faixa"></div>
+        <div class="faixa"></div>
+        <div class="faixa"></div>
+    </div>
+
+    <h2>Holanda</h2>
+    <div class="bandeira" id="holanda">
+        <div class="faixa"></div>
+        <div class="faixa"></div>
+        <div class="faixa"></div>
+    </div>
+
+    <h2>Itália</h2>
+    <div class="bandeira" id="italia">
+        <div class="faixa"></div>
+        <div class="faixa"></div>
+        <div class="faixa"></div>
+    </div>
+
+    <h2>Brasil</h2>
+    <div class="bandeira" id="brasil">
+        <div class="losango"></div>
+        <div class="circulo">
+            <div class="faixa-branca"></div>
+        </div>
+    </div>
+</body>
+</html>

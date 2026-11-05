@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2 - Slide show</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .galeria {
+            display: flex;
+            gap: 10px;
+            width: 700px;
+            max-width: 95vw;
+            height: 400px;
+        }
+        /*
+        Todas as fotos começam com flex: 1 (mesmo tamanho).
+        No hover o flex sobe para 6, então a foto ocupa mais espaço
+        e as outras encolhem. O transition deixa o efeito suave.
+        */
+        .foto {
+            flex: 1;
+            border-radius: 30px;
+            background-color: #999;
+            background-size: cover;
+            background-position: center;
+            transition: flex 0.5s;
+        }
+        .foto:hover {
+            flex: 6;
+        }
+        #foto1 { background-image: url("https://picsum.photos/id/1015/800/1000"); }
+        #foto2 { background-image: url("https://picsum.photos/id/1018/800/1000"); }
+        #foto3 { background-image: url("https://picsum.photos/id/1019/800/1000"); }
+        #foto4 { background-image: url("https://picsum.photos/id/1021/800/1000"); }
+        #foto5 { background-image: url("https://picsum.photos/id/1022/800/1000"); }
+    </style>
+</head>
+<body>
+    <div class="galeria">
+        <div class="foto" id="foto1"></div>
+        <div class="foto" id="foto2"></div>
+        <div class="foto" id="foto3"></div>
+        <div class="foto" id="foto4"></div>
+        <div class="foto" id="foto5"></div>
+    </div>
+</body>
+</html>

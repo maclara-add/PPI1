@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3 - Como incluir CSS no HTML</title>
+    <style>
+        textarea {
+            width: 400px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>Como incluir CSS em um documento HTML?</h1>
+    <p>Existem três formas principais de incluir CSS:</p>
+
+    <h2>1. CSS inline</h2>
+    <p>O estilo é escrito direto no elemento, usando o atributo style. Afeta só aquele elemento.</p>
+    <textarea readonly rows="2">
+<p style="color: red;">Texto vermelho</p>
+    </textarea>
+
+    <h2>2. CSS interno</h2>
+    <p>O CSS fica dentro da tag style, no head do próprio documento. Vale para a página inteira.</p>
+    <textarea readonly rows="8">
+<head>
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+</head>
+    </textarea>
+
+    <h2>3. CSS externo</h2>
+    <p>O CSS fica em um arquivo separado (.css) e é ligado ao HTML com a tag link, no head. É a forma mais indicada, porque o mesmo arquivo pode ser usado em várias páginas.</p>
+    <textarea readonly rows="4">
+<head>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+    </textarea>
+</body>
+</html>

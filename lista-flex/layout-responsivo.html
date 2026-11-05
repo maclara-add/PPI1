@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8 - Layout responsivo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            height: 100vh;
+            padding: 10px;
+            background-color: #eeeeee;
+        }
+        .layout {
+            display: grid;
+            grid-template-columns: 40px 2fr 1fr 1.5fr;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas:
+                "bolas azul azul laranja"
+                "bolas marrom agua laranja"
+                "rosa rosa verde verde";
+            gap: 6px;
+            height: 100%;
+            padding: 6px;
+            background-color: white;
+        }
+        .bolas {
+            grid-area: bolas;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 6px;
+        }
+        .bola {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+        }
+        .bola:nth-child(1) { background-color: #ee8a5a; }
+        .bola:nth-child(2) { background-color: #b8c28f; }
+        .bola:nth-child(3) { background-color: #d3c3e3; }
+        .bola:nth-child(4) { background-color: #f2931e; }
+
+        #azul    { grid-area: azul;    background-color: #b4c7dc; }
+        #marrom  { grid-area: marrom;  background-color: #d0a9a5; }
+        #agua    { grid-area: agua;    background-color: #c5dcd9; }
+        #laranja { grid-area: laranja; background-color: #f2a93b; }
+        #rosa    { grid-area: rosa;    background-color: #f4b5a5; }
+        #verde   { grid-area: verde;   background-color: #b8c96b; }
+
+        /* celular: os blocos ficam um embaixo do outro e as bolinhas em linha */
+        @media screen and (max-width: 500px) {
+            .layout {
+                grid-template-columns: 1fr;
+                grid-template-rows: 40px repeat(6, 1fr);
+                grid-template-areas:
+                    "bolas"
+                    "azul"
+                    "marrom"
+                    "agua"
+                    "laranja"
+                    "rosa"
+                    "verde";
+            }
+            .bolas {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="bolas">
+            <div class="bola"></div>
+            <div class="bola"></div>
+            <div class="bola"></div>
+            <div class="bola"></div>
+        </div>
+        <div id="azul"></div>
+        <div id="marrom"></div>
+        <div id="agua"></div>
+        <div id="laranja"></div>
+        <div id="rosa"></div>
+        <div id="verde"></div>
+    </div>
+</body>
+</html>

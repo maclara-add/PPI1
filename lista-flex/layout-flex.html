@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1 - Layout com flexbox</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+        }
+        .janela {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+        }
+        .barra {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            height: 90px;
+            padding-left: 25px;
+            background-color: #262626;
+        }
+        .circulo {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #00b5ad;
+        }
+        .corpo {
+            display: flex;
+            flex: 1;
+        }
+        nav {
+            width: 23%;
+            padding: 15px 25px;
+            background-color: #f58233;
+        }
+        .principal {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        header {
+            height: 65px;
+            padding-top: 15px;
+            text-align: center;
+            background-color: #00a8de;
+        }
+        main {
+            flex: 1;
+            padding-top: 15px;
+            text-align: center;
+            background-color: #614ca0;
+        }
+        footer {
+            height: 70px;
+            padding-top: 15px;
+            text-align: center;
+            background-color: #0492c2;
+        }
+    </style>
+</head>
+<body>
+    <div class="janela">
+        <div class="barra">
+            <div class="circulo"></div>
+            <div class="circulo"></div>
+            <div class="circulo"></div>
+        </div>
+
+        <div class="corpo">
+            <nav>Navegação</nav>
+            <div class="principal">
+                <header>Cabeçalho</header>
+                <main>Conteúdo</main>
+                <footer>Rodapé</footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
